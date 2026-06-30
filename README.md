@@ -4,6 +4,33 @@
 
 検索で用語を調べると、**初級・中級・上級**の3段階で学べます。
 
+## iPhoneで開く
+
+### 公開URL（GitHub Pages）
+
+**https://kikurin-tasogare.github.io/ai-chic-record/**
+
+Safari にこのURLを貼れば、iPhone からそのまま使えます。ホーム画面に追加すればアプリ風にもできます。
+
+> 初回だけ下記「公開手順」の設定が必要です（未設定だと 404 になります）。
+
+### 公開手順（1回だけ・約2分）
+
+#### 方法A: GitHub Pages（おすすめ）
+
+1. [リポジトリ Settings → Pages](https://github.com/kikurin-tasogare/ai-chic-record/settings/pages) を開く
+2. **Build and deployment → Source** で **GitHub Actions** を選択
+3. `main` ブランチに push 済みなら、Actions が自動デプロイ
+4. 数分後、上記URLで iPhone からアクセス可能に
+
+> リポジトリが非公開の場合、GitHub Pages の利用には [GitHub Pro](https://github.com/pricing) が必要です。無料で公開する場合は **Settings → General → Change visibility → Public** に変更してください。
+
+#### 方法B: Vercel（より早い場合あり）
+
+1. [vercel.com/new](https://vercel.com/new) で `kikurin-tasogare/ai-chic-record` を Import
+2. 設定はそのまま **Deploy**
+3. 発行された URL（例: `https://ai-chic-record.vercel.app`）を iPhone Safari で開く
+
 ## v0.1 の機能
 
 - アカシックレコード風デザイン（落ち着いた学術感 + AIアクセント）
