@@ -1,0 +1,32 @@
+[
+  {
+    "name": "GitHub",
+    "category": "開発基盤",
+    "levels": {
+      "beginner": "GitHub（ギットハブ）は、プログラムのソースコードをインターネット上に保存・共有できるサービスです。Googleドライブで文書を共有するように、コードを「リポジトリ（保管庫）」という単位で管理します。",
+      "intermediate": "GitHubはGitというバージョン管理システムをベースに、コードの変更履歴・ブランチ（作業ライン）・プルリクエスト（変更の提案とレビュー）をチームで扱えるプラットフォームです。Issue管理やActions（自動化）も統合されています。",
+      "advanced": "GitHubは分散型VCSのホスティングに留まらず、CI/CD（GitHub Actions）、パッケージレジストリ、Codespaces、Copilot連携など開発ライフサイクル全体を担うDevOps基盤です。オープンソースエコシステムの中心として、API・Webhook・GitHub Appsによる拡張も可能です。"
+    },
+    "example": "ポッドキャストの原稿を「mainブランチ」に置き、エピソードごとにブランチを切って編集。完成したらプルリクエストで「ノートくん用のメモ追加」をレビューしてから公開——まるで放送局の原稿管理室のような場所です。"
+  },
+  {
+    "name": "Vercel",
+    "category": "デプロイ",
+    "levels": {
+      "beginner": "Vercel（ヴァーセル）は、WebサイトやWebアプリを簡単にインターネット上に公開（デプロイ）できるサービスです。GitHubと連携すると、コードをプッシュするだけで自動的にサイトが更新されます。",
+      "intermediate": "Vercelはフロントエンド向けのホスティングプラットフォームで、Next.jsの開発元が提供しています。エッジネットワークによるCDN配信、プレビューデプロイ（PRごとの仮公開）、サーバーレス関数の実行を一体化しています。",
+      "advanced": "VercelはJamstack/SSR/ISRを含むモダンWebアーキテクチャ向けPaaSで、Edge Functions・Middleware・Analytics・Speed Insightsなどパフォーマンス最適化機能を提供します。Git連携CI/CD、環境変数管理、カスタムドメイン・SSLを含む本番運用基盤として機能します。"
+    },
+    "example": "アイシックレコードのHTMLをGitHubにpushしたら、Vercelが自動で公開。まるで「原稿を渡したら即座に書店の棚に並ぶ」魔法の出版社。希ちゃんに「パパの作った辞典、スマホで見れるよ」と見せるまでが一瞬です。"
+  },
+  {
+    "name": "Node.js",
+    "category": "ランタイム",
+    "levels": {
+      "beginner": "Node.js（ノード・ジェイエス）は、JavaScriptをブラウザの外——パソコンやサーバー上——で動かすための環境（ランタイム）です。これにより、Webページ用の言語でバックエンド処理も書けるようになります。",
+      "intermediate": "Node.jsはV8エンジン上で動作する非同期I/OモデルのJavaScriptランタイムです。npm（パッケージマネージャ）と組み合わせてCLIツール、APIサーバー、ビルドツールなどを構築。イベントループによる高スループットI/Oが特徴です。",
+      "advanced": "Node.jsはシングルスレッドイベントループ＋libuvによる非ブロッキングI/Oアーキテクチャを採用。Worker Threads・Cluster ModuleでCPUバウンド処理を補完し、Express/Fastify等のフレームワーク、ESM/CJSモジュール、LTSリリースサイクルでエンタープライズ利用も可能です。"
+    },
+    "example": "ローカルで簡易HTTPサーバーを立てて、terms.jsonを配信する——まるで自宅に小さな図書館を設置して、NotebookLM（ノートくん）に参照させる前の「下書き棚」のようなもの。APIキー不要の静的サイトなら、Node.jsすら不要ですが、開発ツールの裏ではよく動いています。"
+  }
+]

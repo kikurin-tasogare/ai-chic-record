@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アイシックレコード — AI用語辞典</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="archive-glow" aria-hidden="true"></div>
+
+  <header class="record-header">
+    <div class="header-seal">
+      <span class="seal-icon">◈</span>
+    </div>
+    <div class="header-text">
+      <p class="header-subtitle">アカシックレコード風 用語アーカイブ</p>
+      <h1 class="header-title">アイシックレコード</h1>
+      <p class="header-tagline">AI Chic Record — 知識の段階的索引</p>
+    </div>
+    <div class="header-meta">
+      <span class="meta-label">巻数</span>
+      <span class="meta-value">Vol. 0.1</span>
+      <span class="meta-label">登録件数</span>
+      <span class="meta-value" id="term-count">—</span>
+    </div>
+  </header>
+
+  <main class="record-main">
+    <aside class="index-panel">
+      <section class="panel-section">
+        <h2 class="panel-title">索引検索</h2>
+        <div class="search-wrap">
+          <label for="search-input" class="visually-hidden">用語を検索</label>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="用語名・説明文を検索…"
+            autocomplete="off"
+          >
+          <span class="search-icon" aria-hidden="true">⌕</span>
+        </div>
+      </section>
+
+      <section class="panel-section">
+        <h2 class="panel-title">カテゴリ索引</h2>
+        <nav class="category-nav" id="category-nav" aria-label="カテゴリフィルター">
+          <button type="button" class="category-btn active" data-category="all">すべて</button>
+        </nav>
+      </section>
+
+      <section class="panel-section panel-stats">
+        <h2 class="panel-title">閲覧記録</h2>
+        <dl class="stats-list">
+          <div class="stats-row">
+            <dt>表示中</dt>
+            <dd id="visible-count">0</dd>
+          </div>
+          <div class="stats-row">
+            <dt>選択カテゴリ</dt>
+            <dd id="active-category">すべて</dd>
+          </div>
+        </dl>
+      </section>
+    </aside>
+
+    <section class="terms-panel" aria-live="polite">
+      <div class="terms-header">
+        <h2 class="terms-title">用語学籍簿</h2>
+        <p class="terms-desc">カードを開き、初級 → 中級 → 上級の順に学習してください。</p>
+      </div>
+      <div class="terms-grid" id="terms-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>
+        該当する用語が見つかりませんでした。検索条件を変更してください。
+      </p>
+    </section>
+  </main>
+
+  <footer class="record-footer">
+    <p>静的JSONのみ使用 — APIキー不要</p>
+    <p class="footer-note">アイシックレコード v0.1</p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
