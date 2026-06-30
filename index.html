@@ -36,17 +36,22 @@
     <aside class="index-panel">
       <section class="panel-section">
         <h2 class="panel-title">索引検索</h2>
-        <div class="search-wrap">
+        <form class="search-wrap" role="search" id="search-form">
           <label for="search-input" class="visually-hidden">用語を検索</label>
           <input
-            type="search"
+            type="text"
             id="search-input"
             class="search-input"
             placeholder="用語名・説明文を検索…"
             autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            inputmode="search"
+            enterkeyhint="search"
           >
           <span class="search-icon" aria-hidden="true">⌕</span>
-        </div>
+        </form>
       </section>
 
       <section class="panel-section">
@@ -59,6 +64,10 @@
       <section class="panel-section panel-stats">
         <h2 class="panel-title">閲覧記録</h2>
         <dl class="stats-list">
+          <div class="stats-row">
+            <dt>検索</dt>
+            <dd id="active-search">—</dd>
+          </div>
           <div class="stats-row">
             <dt>表示中</dt>
             <dd id="visible-count">0</dd>
@@ -88,6 +97,6 @@
     <p class="footer-note">アイシックレコード v0.1</p>
   </footer>
 
-  <script src="app.js" type="module"></script>
+  <script src="app.js"></script>
 </body>
 </html>

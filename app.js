@@ -6,11 +6,14 @@ const state = {
 
 const elements = {
   searchInput: document.getElementById("search-input"),
+  searchForm: document.getElementById("search-form"),
   categoryNav: document.getElementById("category-nav"),
   termsGrid: document.getElementById("terms-grid"),
+  termsPanel: document.querySelector(".terms-panel"),
   emptyState: document.getElementById("empty-state"),
   termCount: document.getElementById("term-count"),
   visibleCount: document.getElementById("visible-count"),
+  activeSearchLabel: document.getElementById("active-search"),
   activeCategoryLabel: document.getElementById("active-category"),
 };
 
@@ -173,6 +176,7 @@ function escapeHtml(str) {
 
 function render() {
   const filtered = filterTerms();
+  const query = state.searchQuery.trim();
   elements.termsGrid.innerHTML = "";
 
   filtered.forEach((term, index) => {
@@ -180,13 +184,34 @@ function render() {
   });
 
   elements.visibleCount.textContent = String(filtered.length);
+  elements.activeSearchLabel.textContent = query || "—";
   elements.emptyState.hidden = filtered.length > 0;
 }
 
+function applySearch(shouldScroll = false) {
+  state.searchQuery = elements.searchInput.value;
+  render();
+  if (shouldScroll && state.searchQuery.trim()) {
+    scrollToResults();
+  }
+}
+
+function scrollToResults() {
+  elements.termsPanel?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function initSearch() {
-  elements.searchInput.addEventListener("input", (e) => {
-    state.searchQuery = e.target.value;
-    render();
+  const input = elements.searchInput;
+  const form = elements.searchForm;
+
+  input.addEventListener("input", () => applySearch(false));
+  input.addEventListener("change", () => applySearch(true));
+  input.addEventListener("compositionend", () => applySearch(false));
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    applySearch(true);
+    input.blur();
   });
 }
 
